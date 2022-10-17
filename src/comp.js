@@ -2,8 +2,8 @@ import * as ReactDOMServer from 'react-dom/server';
 
 import Page from './Page';
 
+console.log("Started .. ")
 
-const pi=Math.PI;
 export default {
   port: 3000,
   fetch(request) {
