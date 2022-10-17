@@ -1,6 +1,6 @@
 import * as ReactDOMServer from 'react-dom/server';
 
-import Page from './Page';
+import HTMLPage from './HTMLPage';
 
 console.log("Started .. ")
 
@@ -11,7 +11,7 @@ export default {
     console.log("request ==>", JSON.stringify(request,null,4));
     console.log("request ==>", JSON.stringify(request.headers,null,4));
     
-    const content=ReactDOMServer.renderToString(<Page/>);
+    const content=ReactDOMServer.renderToString(<HTMLPage/>);
     const meta={satus: 200,
       headers: {
         "Content-Type": "text/html",
