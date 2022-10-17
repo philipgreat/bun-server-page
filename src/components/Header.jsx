@@ -39,7 +39,7 @@ export default function Section(props) {
       <div style={{paddingBottom:"20px"}}>
             <Row>
                 <Col>
-                <img width="100px" src='https://app.doublechaintech.com/qrsvc/svg/44010001801/' />
+                <img width="40px" src='https://cms.think-to.com/thinktologo.png' />
 
                 </Col>
                 <Col>

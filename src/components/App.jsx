@@ -2,6 +2,7 @@ import Section from "./Section";
 import styles from "./Share.css";
 
 import  Header  from "./Header";
+import Footer from "./Footer";
 const data={
   count:3,
   values:[
@@ -37,14 +38,15 @@ const data3={
 
 export default function App(props) {
   return (
-    <div className={"text"} style={{padding:"50px 50px 50px 50px "}}>
-      
+    <div className={"text"} style={{padding:"50px 50px 50px 50px ",height:"90vh"}}>
+      <div style={{height:"80vh"}}>
        <Header></Header>
          <Section data={data}></Section>
          <Section data={data2}></Section>
          <Section data={data3}></Section>
-         
-       
+         </div>
+        
+         <Footer/>
       
     </div>
   );

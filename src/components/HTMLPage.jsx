@@ -88,12 +88,16 @@ export default function HTMLPage(props){
         flex-basis: 100%;
         flex: 1;
       }
-
+      .footer {
+        height: 20px;
+        margin-top: -20px;
+      }
 
     `}</style>
     </head>
     <body>
     {props.children}
+   
     </body>
   </html>
 
