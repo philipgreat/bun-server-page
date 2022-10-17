@@ -9,7 +9,9 @@ export default {
   fetch(request) {
     //return new Response("Welcome to Bun!");
     console.log("request ==>", JSON.stringify(request,null,4));
-    console.log("request ==>", JSON.stringify(request.headers,null,4));
+    console.log("request ==>", request.url);
+    console.log("request ==>", new URL(request.url).pathname);
+    //console.log("request ==>", JSON.stringify(request.headers,null,4));
     
     const content=ReactDOMServer.renderToString(
     <HTMLPage>

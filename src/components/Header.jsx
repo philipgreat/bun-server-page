@@ -23,7 +23,7 @@ const Body=({data})=>{
       return <tr>
         {line.map(item=>{
 
-            return <td>{item}</td>
+            return <td key={item}>{item}</td>
         })}
       </tr>  
 
@@ -39,11 +39,11 @@ export default function Section(props) {
       <div style={{paddingBottom:"20px"}}>
             <Row>
                 <Col>
-
+                <img width="100px" src='https://app.doublechaintech.com/qrsvc/svg/44010001801/' />
 
                 </Col>
                 <Col>
-                    <div style={{fontSize:"50px"}}>
+                    <div style={{fontSize:"40px"}}>
                         充装报告
                     </div>
                     
