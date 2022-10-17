@@ -37,7 +37,7 @@ const data3={
 
 export default function App(props) {
   return (
-    <div className={styles.text}>
+    <div className={"text"} style={{padding:"50px 50px 50px 50px "}}>
       
        <Header></Header>
          <Section data={data}></Section>

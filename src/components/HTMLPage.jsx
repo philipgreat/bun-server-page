@@ -12,7 +12,7 @@ export default function HTMLPage(props){
     <style jsx>{`
       
 
-
+      
 
       table{
         border: 1px solid black;
