@@ -1,7 +1,7 @@
 import * as ReactDOMServer from 'react-dom/server';
 
-import HTMLPage from './HTMLPage';
-
+import HTMLPage from '../components/HTMLPage';
+import App from '../components/App'
 console.log("Started .. ")
 
 export default {
@@ -11,7 +11,14 @@ export default {
     console.log("request ==>", JSON.stringify(request,null,4));
     console.log("request ==>", JSON.stringify(request.headers,null,4));
     
-    const content=ReactDOMServer.renderToString(<HTMLPage/>);
+    const content=ReactDOMServer.renderToString(
+    <HTMLPage>
+
+
+      <App></App>
+
+
+    </HTMLPage>);
     const meta={satus: 200,
       headers: {
         "Content-Type": "text/html",

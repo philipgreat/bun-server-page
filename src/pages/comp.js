@@ -1,7 +1,6 @@
 
-
 import moment from 'moment';
-import App from './App';
+import App from '../App';
 export default {
   port: 3000,
   fetch(req) {
@@ -10,4 +9,3 @@ export default {
     return new Response(`Hello from bun on Northflank!\nThe time is ${now}.\nThis is ${url.pathname}.`);
   }
 };
-
