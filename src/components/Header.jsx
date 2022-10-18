@@ -31,7 +31,7 @@ export default function Section(props) {
 
                 </Col>
                 <Col >
-                    <div style={{fontSize:"40px",textAlign:"center"}}>
+                    <div style={{fontSize:"30px",textAlign:"center"}}>
                         {reportData.header.title}
                     </div>
                     

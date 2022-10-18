@@ -22,14 +22,11 @@ export default {
     
     
     const content=ReactDOMServer.renderToString(
-    <HTMLPage>
+        <HTMLPage>
+          <FillingPilotReport/>
+        </HTMLPage>);
 
-
-      <FillingPilotReport></FillingPilotReport>
-
-
-    </HTMLPage>);
-    const meta={satus: 200,
+  const meta={satus: 200,
       headers: {
         "Content-Type": "text/html",
       }

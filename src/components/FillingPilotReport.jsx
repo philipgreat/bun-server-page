@@ -82,12 +82,13 @@ const defaultReportData={
     {values:["充装开始时间：2022.10.15 15:53:35","充装结束时间：2022.10.15 16:21:40","充装时间：00:28:05"]},
     {values:["充装人员：2016","充装工位：Skid3-Module1"]},
     {values:["检验人员：","校验结论："]},
-    {values:["产品信息"],textAlign:'center'},
     {values:[""]},
 
+    {values:["产品信息"],textAlign:'center'},
     {values:["配方名称：135-15CO2 85AR-散","配方编码：MIX-008","配方描述：135bar-散瓶-15%CO2 85%AR"]},
     {values:["公称压力：15Mpa","钢瓶规格：40L","报告id："]},
     {values:[""]},
+
     {values:["充装信息"],textAlign:'center'},
     {values:["气体1：15%CO2"]},
     {values:["开始时间：15:50:45","结束时间：16:01:17","持续时间: 00:10:32"]},
@@ -100,7 +101,7 @@ const defaultReportData={
     {values:["环境/结束温度：20.40/26.70℃","实际精度：28.52%","目标精度：1.5%"]},
     {values:[""]},
     {values:["钢瓶序列号清单"],textAlign:'center'},
-    {values:[",,,,,,,,,,"],minHeight:"400px"},
+    {values:[""],minHeight:"400px"},
     
     
   
