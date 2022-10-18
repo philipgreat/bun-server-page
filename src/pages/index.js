@@ -1,7 +1,7 @@
 import * as ReactDOMServer from 'react-dom/server';
 
 import HTMLPage from '../components/HTMLPage';
-import App from '../components/App'
+import FillingPilotReport from '../components/FillingPilotReport'
 console.log("Started .. ")
 
 export default {
@@ -9,15 +9,23 @@ export default {
   fetch(request) {
     //return new Response("Welcome to Bun!");
     console.log("request ==>", JSON.stringify(request,null,4));
-    console.log("request ==>", request.url);
+   
+
     console.log("request ==>", new URL(request.url).pathname);
     //console.log("request ==>", JSON.stringify(request.headers,null,4));
+    
+    request.text().then((text) => {
+      console.log("request text ==>", text);
+
+      // do something with the text sent in the request
+    });
+    
     
     const content=ReactDOMServer.renderToString(
     <HTMLPage>
 
 
-      <App></App>
+      <FillingPilotReport></FillingPilotReport>
 
 
     </HTMLPage>);

@@ -1,32 +1,18 @@
 
 import {Col,Row} from '../layouts/FlexLayout'
 
-const data={
-    header:"产品信息",
-    count:3,
-    values:[
-        ["编号：FP20220805659"],
-        ["工厂："],
-       
-    ]
-  }
 
-const Body=({data})=>{
+
+const Body=({metaData})=>{
 
     
     
     return  <>
     
    
-  {data.values.map(line=>{
+  {metaData.map(line=>{
 
-      return <tr>
-        {line.map(item=>{
-
-            return <td key={item}>{item}</td>
-        })}
-      </tr>  
-
+      return <tr key={line}><td key={line}> {line}</td></tr>  
 
   })}
     </>
@@ -35,23 +21,25 @@ const Body=({data})=>{
 
 export default function Section(props) {
     //const {data}=props
+    const {reportData}=props
+
     return (
       <div style={{paddingBottom:"20px"}}>
             <Row>
                 <Col>
-                <img width="40px" src='https://cms.think-to.com/thinktologo.png' />
+                <img width="40px" src={reportData.header.logo} />
 
                 </Col>
-                <Col>
-                    <div style={{fontSize:"40px"}}>
-                        充装报告
+                <Col >
+                    <div style={{fontSize:"40px",textAlign:"center"}}>
+                        {reportData.header.title}
                     </div>
                     
                 </Col>
                 <Col>
                 <table>
 
-                   <Body data={data} />
+                   <Body metaData={reportData.header.metaData} />
 
                 </table>
                     

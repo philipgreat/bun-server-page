@@ -11,6 +11,14 @@ const Header=({data})=>{
     return  <tr><td style={{textAlign:"center"}} className='th' colSpan={3}>{data.header}</td></tr>
 }
 
+const SubHeader=({data})=>{
+
+    if(!data.subHeader){
+        return null;
+    }
+    return  <tr><td className='th' colSpan={3}>{data.subHeader}</td></tr>
+}
+
 const Body=({data})=>{
     
     return  <>
@@ -32,6 +40,7 @@ export default function Section(props) {
             <section>
               <table>
                 {Header({data})}
+                {SubHeader({data})}
                 {Body({data})}
               </table>
             </section>

@@ -1,6 +1,6 @@
 
 import moment from 'moment';
-import App from '../App';
+import App from '../components/FillingPilotReport';
 export default {
   port: 3000,
   fetch(req) {

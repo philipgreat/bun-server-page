@@ -90,7 +90,7 @@ export default function HTMLPage(props){
       }
       .footer {
         height: 20px;
-        margin-top: -20px;
+        margin-top: -30px;
       }
 
     `}</style>
