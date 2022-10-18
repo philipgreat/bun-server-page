@@ -11,6 +11,6 @@ COPY --chown=1001:root node_modules /work/node_modules
 EXPOSE 3000
 USER 1001
 
-CMD ["./bun","src/index.js" ]
+CMD ["./bun","src/pages/index.js" ]
 
 
