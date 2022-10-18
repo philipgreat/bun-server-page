@@ -100,7 +100,7 @@ const defaultReportData={
     {values:["环境/结束温度：20.40/26.70℃","实际精度：28.52%","目标精度：1.5%"]},
     {values:[""]},
     {values:["钢瓶序列号清单"]},
-    {values:[""]},
+    {values:[",,,,,,,,,,"],minHeight:"400px"},
     
     
   
@@ -129,7 +129,7 @@ export default function FillingPilotReport(props) {
          
          </div>
         
-         <Footer/>
+       
       
     </div>
   );

@@ -69,12 +69,12 @@ const calcSpan=(length, index)=>{
 
 export default function Section(props) {
     const {data}=props
-    const {textAlign='left'}=data
+    const {textAlign='left',minHeight="15px"}=data
     const valuesLength=data.values.length
     return (
       
       <>
-      <tr>
+      <tr style={{height:minHeight}}>
 
       {data.values.map((value,index)=>{
       
@@ -82,7 +82,9 @@ export default function Section(props) {
           return <td colSpan={calcSpan(valuesLength,index)}>&nbsp;</td>;
         }
         if(valuesLength===1 ){
-          return <td className='th' style={{textAlign:textAlign}} colSpan={calcSpan(valuesLength,index)}>{wrapValue(value)}</td>;
+          return <td className='th' 
+          style={{textAlign:textAlign}} 
+          colSpan={calcSpan(valuesLength,index)}>{wrapValue(value)}</td>;
         }
         return <td colSpan={calcSpan(valuesLength,index)}>{wrapValue(value)}</td>
       
