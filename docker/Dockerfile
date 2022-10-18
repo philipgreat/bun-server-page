@@ -8,12 +8,9 @@ COPY --chown=1001:root dist/bun /work/
 COPY --chown=1001:root src /work/src
 COPY --chown=1001:root node_modules /work/node_modules
 
-
-
 EXPOSE 3000
 USER 1001
 
-CMD ["ls","-l" ]
 CMD ["./bun","src/comp.js" ]
 
 
