@@ -99,7 +99,7 @@ const defaultReportData={
     {values:["起始压力：1.00 Bar","结束压力：36.27 Bar","动态目标压力：28.22 Bar"]},
     {values:["环境/结束温度：20.40/26.70℃","实际精度：28.52%","目标精度：1.5%"]},
     {values:[""]},
-    {values:["钢瓶序列号清单"]},
+    {values:["钢瓶序列号清单"],textAlign:'center'},
     {values:[",,,,,,,,,,"],minHeight:"400px"},
     
     
