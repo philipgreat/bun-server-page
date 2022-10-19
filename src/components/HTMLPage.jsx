@@ -1,6 +1,6 @@
 
 export default function HTMLPage(props) {
-
+  const {reportData}=props
   const title=reportData?.header?.title || "报告"
   return (
     <html lang="en">

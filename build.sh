@@ -1,4 +1,4 @@
-env https_proxy=http://192.168.1.9:1087 git pull
+env https_proxy=http://192.168.1.250:1087 git pull
 docker build --no-cache -f docker/Dockerfile -t doublechaintech/general-report-saas  .
 docker rm -f general-report-saas
 docker run -d --name general-report-saas -p 3000:3000 doublechaintech/general-report-saas
