@@ -32,7 +32,6 @@ export default function HTMLPage(props) {
           td {
             border: 1px solid black;
             border-collapse: collapse;
-
             font-size: 10px;
             padding-left: 5px;
           }
