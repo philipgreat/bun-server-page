@@ -2,7 +2,29 @@ import * as ReactDOMServer from 'react-dom/server';
 
 import HTMLPage from '../components/HTMLPage';
 import FillingPilotReport from '../components/FillingPilotReport'
+import {defaultReportData} from '../components/DefaultReportData'
 console.log("Started .. ")
+
+
+const sampleResponse=()=>{
+
+  const content=ReactDOMServer.renderToString(
+    <HTMLPage reportData={defaultReportData}>
+      <FillingPilotReport reportData={defaultReportData}/>
+    </HTMLPage>);
+
+
+  const meta={satus: 200,
+    headers: {
+      "Content-Type": "text/html",
+      "Server":"Double Chain Page Server 1.0"
+    }
+  };
+  
+  return new Response(content,meta);
+
+
+}
 
 
 const getTextFromRequest=(request)=>{
@@ -33,8 +55,10 @@ export default {
   port: 3000,
   async fetch(request) {
     //return new Response("Welcome to Bun!");
-    console.log("request ==>", JSON.stringify(request,null,4));
-   
+    console.log("request ==>",request.method);
+    if(request.method === 'GET'){
+      return sampleResponse();
+    }
 
     console.log("request ==>", new URL(request.url).pathname);
     //console.log("request ==>", JSON.stringify(request.headers,null,4));
