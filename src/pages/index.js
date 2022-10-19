@@ -95,7 +95,7 @@ export default {
     };
     console.log("request text payload", playload.text);
     
-    return new Response(JSON.stringify(playload),meta);
+    return new Response(content,meta);
 
   },
 };
