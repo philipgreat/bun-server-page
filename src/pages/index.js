@@ -81,9 +81,10 @@ export default {
       return errorResponse("请求JSON里不包含 body 字段必须是 数组");
     }
     
+    const reportData=JSON.parse(playload.text);
     const content=ReactDOMServer.renderToString(
-      <HTMLPage>
-        <FillingPilotReport reportData={JSON.parse(playload.text)}/>
+      <HTMLPage reportData={reportData}>
+        <FillingPilotReport reportData={reportData}/>
       </HTMLPage>);
 
 
@@ -96,6 +97,6 @@ export default {
     console.log("request text payload", playload.text);
     
     return new Response(content,meta);
-
+    
   },
 };
