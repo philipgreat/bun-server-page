@@ -45,7 +45,8 @@ const wrapItem=({item})=>{
 }
 async function sendEmail({htmlContent,title}) {
   const emailservice="https://app.doublechaintech.com/emailservice/platformManager/sendHtmlReport/"
-  const data={title,text:htmlContent,recipients:"philip_chang@163.com,dehong.mei@think-to.com,tingzhi.zhou@think-to.com"}
+  //const data={title,text:htmlContent,recipients:"philip_chang@163.com,dehong.mei@think-to.com,tingzhi.zhou@think-to.com"}
+  const data={title,text:htmlContent,recipients:"philip_chang@163.com"}
   const status = await axios.put(emailservice,JSON.stringify(data));
   console.log(status.data)
 
@@ -59,10 +60,17 @@ async function execute() {
         //console.log(JSON.stringify(item));
         defaultReportData.body.push(wrapItem({item}));
     })
+    const response2 = await axios.get(`https://cmstest.ggas.com/cmes/platformManager/statsMerchant/`);
+    response2.data.data.forEach(item=>{
+        //console.log(JSON.stringify(item));
+        defaultReportData.body.push(wrapItem({item}));
+    })
+   
+
     //console.log(response.data);
     const htmlContentResp = await axios.put(`http://cms.think-to.com:20003/`,defaultReportData);
     //console.log(htmlContentResp.data);
-    await sendEmail({htmlContent:htmlContentResp.data,title:"CMS SaaS每日汇报@"+nowExpr})
+    await sendEmail({htmlContent:htmlContentResp.data,title:"CMS-SaaS每日汇报@"+nowExpr})
     //return response.data;
   } catch (error) {
     console.error(error);
