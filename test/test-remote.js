@@ -15,7 +15,7 @@ const defaultReportData={
       metaData:["日期："+nowExpr,"编号："+uuidv4()]
     },
     body:[
-        {"values":["工厂名称","登记气瓶总数","充装总数","去年充装总数","上个月充装个数","昨天充装个数"]},
+        {"values":["序号","工厂名称","登记气瓶总数","充装总数","去年充装总数","上个月充装个数","昨天充装个数"]},
     ]
 }
 /*
@@ -32,11 +32,12 @@ const defaultReportData={
 "syncMerchantId":"M000003","lastSyncRecordTime":1673604004000,"version":4803}
 
 */
-const wrapItem=({item})=>{
+const wrapItem=({item,index})=>{
     //      {"values":["工厂名称","登记气瓶总数","充装总数","去年充装总数","上个月充装个数","昨天充装个数"]},
 
     const properties=["name","_assetAsRegisterCount","_packagedItemCount","_lastYearCount","_lastMonthCount","_yesterdayCount"];
     const line=[];
+    line.push(index+1)
     properties.forEach(prop=>{
       line.push(_.get(item,prop,"-"));
     })
@@ -44,27 +45,30 @@ const wrapItem=({item})=>{
     return  {"values":line};
 }
 async function sendEmail({htmlContent,title}) {
-  const emailservice="https://app.doublechaintech.com/emailservice/platformManager/sendHtmlReport/"
-  //const data={title,text:htmlContent,recipients:"philip_chang@163.com,dehong.mei@think-to.com,tingzhi.zhou@think-to.com"}
-  const data={title,text:htmlContent,recipients:"philip_chang@163.com"}
-  const status = await axios.put(emailservice,JSON.stringify(data));
+  const emailservice="https://springboot-simple-service-siphksxloz.cn-chengdu.fcapp.run/emailservice/platformManager/sendHTMLEmailT/"
+  const data={title,
+    text:htmlContent,
+    content:htmlContent,
+    recipients:"philip_chang@163.com,dehong.mei@think-to.com,tingzhi.zhou@think-to.com,xiaodong.chen@think-to.com,bo.huang@think-to.com,jun.yang@think-to.com"
+    //recipients:"philip_chang@163.com"
+  
+  }
+  //const data={title,text:htmlContent,recipients:"philip_chang@163.com"}
+  const status = await axios.put(emailservice,JSON.stringify(data),{headers:{'Content-Type': 'application/json'}});
   console.log(status.data)
 
 
 
 }
+//curl http://localhost:8888/cmes/platformManager/statsMerchant/
 async function execute() {
   try {
-    const response = await axios.get(`https://cms.think-to.com/cmes/platformManager/statsMerchant/`);
-    response.data.data.forEach(item=>{
+    const response = await axios.get(`http://cms.think-to.com/cmes/platformManager/statsMerchant/`);
+    response.data.data.forEach((item,index)=>{
         //console.log(JSON.stringify(item));
-        defaultReportData.body.push(wrapItem({item}));
+        defaultReportData.body.push(wrapItem({item,index}));
     })
-    const response2 = await axios.get(`https://cmstest.ggas.com/cmes/platformManager/statsMerchant/`);
-    response2.data.data.forEach(item=>{
-        //console.log(JSON.stringify(item));
-        defaultReportData.body.push(wrapItem({item}));
-    })
+
    
 
     //console.log(response.data);
@@ -79,6 +83,16 @@ async function execute() {
 
 execute()
 
+// const htmlContent="<div></div>"
+// const title="TRY"
+
+// sendEmail({title,htmlContent})
+
 //console.log(defaultReportData)
 
 
+    // const response2 = await axios.get(`https://cmstest.ggas.com/cmes/platformManager/statsMerchant/`);
+    // response2.data.data.forEach(item=>{
+    //     //console.log(JSON.stringify(item));
+    //     defaultReportData.body.push(wrapItem({item}));
+    // })
