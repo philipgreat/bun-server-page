@@ -1,7 +1,7 @@
 import * as ReactDOMServer from 'react-dom/server';
 
 import HTMLPage from '../components/HTMLPage';
-import FillingPilotReport from '../components/FillingPilotReport'
+import FillingPilotReport from '../../archive/FillingPilotReport'
 console.log("Started .. ")
 
 export default {

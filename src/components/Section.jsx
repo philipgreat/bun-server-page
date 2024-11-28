@@ -67,9 +67,24 @@ const calcSpan=(length, index)=>{
 
 }
 
+const buildCell=()=>{
+
+}
+const leftValue=(value)=>{
+  const parts=value.split("：");
+  return parts[0]
+}
+
+const rightValue=(value)=>{
+  const parts=value.split("：");
+  if(parts.length<2){
+    return "";
+  }
+  return parts[1]
+}
 export default function Section(props) {
     const {data}=props
-    const {textAlign='left',minHeight="15px"}=data
+    const {textAlign='left',minHeight="30px"}=data
     const valuesLength=data.values.length
     return (
       
@@ -86,7 +101,16 @@ export default function Section(props) {
           style={{textAlign:textAlign}} 
           colSpan={calcSpan(valuesLength,index)}>{wrapValue(value)}</td>;
         }
-        return <td colSpan={calcSpan(valuesLength,index)}>{wrapValue(value)}</td>
+        return <td colSpan={calcSpan(valuesLength,index)}
+         style={{wordWrap:"break-word",wordBreak:"break-all",textDecoration:"none",width:"33%"}}
+         >
+          <div style={{width:"100%",display:"flex"}}>
+          
+          <div style={{width:"50%"}}>{leftValue(value)}</div>
+          <div style={{width:"50%",textAlign:"center",paddingLeft:"20px"}}>{rightValue(value)}</div>
+          
+          </div>
+          </td>
       
       })}
 

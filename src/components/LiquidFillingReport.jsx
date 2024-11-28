@@ -2,52 +2,8 @@ import Section from "./Section";
 import styles from "./Share.css";
 
 import  Header  from "./Header";
-import Footer from "./Footer";
-const data={
-  count:3,
-  values:[
-      ["充装开始时间：2022.08.06 14:19:44","充装结束时间：2022.08.06 14:55:35","充装时间：00:35:51"],
-      ["充装人员：2022.08.06 14:19:44","充装工位：Skid1-Module1",""],
-      ["检验人员：","校验结论：",""],
-  ]
-}
+import CheckSection from "./CheckSection";
 
-
-const data2={
-  header:"充装信息",
-  subHeader:"气体1-氧气",
-  count:3,
-  values:[
-      ["配方名称：120-氩-真空一次","配方编码：AR-006","配方描述：120-放空-真空-100%氩"],
-      ["公称压力：15Mpa","钢瓶规格：40L","批次号："],
-      ["检验人员：","校验结论："],
-  ]
-}
-
-
-const data4={
-  subHeader:"气体1-氧气",
-  count:3,
-  values:[
-      ["配方名称：120-氩-真空一次","配方编码：AR-006","配方描述：120-放空-真空-100%氩"],
-      ["公称压力：15Mpa","钢瓶规格：40L","批次号："],
-      ["检验人员：","校验结论："],
-  ]
-}
-
-
-const data3={
-  header:"钢瓶序列号清单",
-  count:3,
-  values:[
-    ["GP00002","GP00002","GP00002"],
-    ["GP00002","GP00002","GP00002"],
-    ["GP00002","GP00002","GP00002"],
-    ["GP00002","GP00002","GP00002"],
-    
-    
-  ]
-}
 /*
 ["充装开始时间：2022.10.15 15:53:35","充装结束时间：2022.10.15 16:21:40","充装时间：00:28:05"]
 ["充装人员：2016","充装工位：Skid3-Module1"]
@@ -74,7 +30,7 @@ const data3={
 
 
 
-export default function FillingPilotReport(props) {
+export default function LiquidFillingReport(props) {
 
 
   const {reportData}=props 
@@ -94,6 +50,15 @@ export default function FillingPilotReport(props) {
          } 
          </table>
          
+         <table>
+         {
+
+            reportData.sections.map(section=><CheckSection data={section}></CheckSection>)
+
+         } 
+         </table>
+
+
          </div>
         
        

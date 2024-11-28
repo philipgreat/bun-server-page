@@ -69,7 +69,12 @@ async function execute() {
         defaultReportData.body.push(wrapItem({item,index}));
     })
 
-   
+    const response2 = await axios.get(`https://cmstest.ggas.com/cmes/platformManager/statsMerchant/`);
+    response2.data.data.forEach((item,index)=>{
+        //console.log(JSON.stringify(item));
+        defaultReportData.body.push(wrapItem({item,index}));
+    })
+    
 
     //console.log(response.data);
     const htmlContentResp = await axios.put(`http://cms.think-to.com:20003/`,defaultReportData);

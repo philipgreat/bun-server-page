@@ -1,8 +1,8 @@
 import * as ReactDOMServer from 'react-dom/server';
 
 import HTMLPage from '../components/HTMLPage';
-import FillingPilotReport from '../components/FillingPilotReport'
-import {defaultReportData} from '../components/DefaultReportData'
+import LiquidFillingReport from '../components/LiquidFillingReport'
+import {defaultReportData} from '../components/DefaultLiquidReportData'
 console.log("Started .. ")
 
 
@@ -10,7 +10,7 @@ const sampleResponse=()=>{
 
   const content=ReactDOMServer.renderToString(
     <HTMLPage reportData={defaultReportData}>
-      <FillingPilotReport reportData={defaultReportData}/>
+      <LiquidFillingReport reportData={defaultReportData}/>
     </HTMLPage>);
 
 
@@ -108,7 +108,7 @@ export default {
     const reportData=JSON.parse(playload.text);
     const content=ReactDOMServer.renderToString(
       <HTMLPage reportData={reportData}>
-        <FillingPilotReport reportData={reportData}/>
+        <LiquidFillingReport reportData={reportData}/>
       </HTMLPage>);
 
 
