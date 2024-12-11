@@ -23,18 +23,24 @@ export default function Section(props) {
     //const {data}=props
     const {reportData}=props
     //border:;
-    const tdStyle={width:"100%",borderCollapse:"collapse",border:"0"}
+    const tdStyle={width:"33%",borderCollapse:"collapse",border:"0"}
     //style={{borderCollapse:"collapse"}}
     return (
       <div style={{paddingBottom:"20px"}}>
             <table cellspacing="0" cellpadding="0" style={{border:"0"}} ><tr>
-                
+                <td style={tdStyle}>
+                <img width="40px" src={reportData.header.logo} />
+                </td>
                 <td style={tdStyle}>
                     <div style={{fontSize:"30px",textAlign:"center"}}>
                         {reportData.header.title}
                     </div>
                 </td>
-                
+                <td style={tdStyle}>
+                <table>
+                   <Body metaData={reportData.header.metaData} />
+                </table>
+                </td>
 
                 </tr>
             </table>
