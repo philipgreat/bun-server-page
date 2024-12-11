@@ -27,7 +27,7 @@ export default function Section(props) {
     //style={{borderCollapse:"collapse"}}
     return (
       <div style={{paddingBottom:"20px"}}>
-            <table cellspacing="0" cellpadding="0" style={{border:"0"}} ><tr>
+            <table cellSpacing="0" cellPadding="0" style={{border:"0"}} ><tr>
                 <td style={tdStyle}>
                 <img width="40px" src={reportData.header.logo} />
                 </td>
