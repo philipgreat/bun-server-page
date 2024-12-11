@@ -14,10 +14,10 @@ export const defaultReportData={
       {values:[""]},
      
   
-      // {values:["产品信息"],textAlign:'center'},
-      // {values:["配方名称：135-15CO2 85AR-散","配方编码：MIX-008","配方描述：135bar-散瓶-15%CO2 85%AR"]},
-      // {values:["公称压力：15Mpa","钢瓶规格：40L","报告id："]},
-      // {values:[""]},
+      {values:["产品信息"],textAlign:'center'},
+      {values:["配方名称：135-15CO2 85AR-散","配方编码：MIX-008"]},
+      {values:["公称压力：15Mpa","钢瓶规格：40L"]},
+      {values:[""]},
   
       {values:["充前检查"],textAlign:'center'},
     
@@ -48,22 +48,7 @@ export const defaultReportData={
       
     ],
 
-    sections:[
-      // {name:"充装前检查",items:[
-
-      //   {name:"介质化验分析报告结论", result:"合格"},
-      //   {name:"罐体检验在有效期内", result:"合格"},
-      //   {name:"具有危化品准运证 ", result:"合格"},
-      //   {name:"介质化验分析报告结论", result:"合格"},
-      //   {name:"罐体检验在有效期内", result:"合格"},
-      //   {name:"具有危化品准运证 ", result:"合格"},
-
-      // ]},
-      // {name:"充装检查",items:[]},
-      // {name:"充装后检查",items:[]},
-      
-
-    ]
+   
 
   }
   

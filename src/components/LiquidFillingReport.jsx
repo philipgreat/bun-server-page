@@ -53,7 +53,7 @@ export default function LiquidFillingReport(props) {
          <table>
          {
 
-            reportData.sections.map(section=><CheckSection data={section}></CheckSection>)
+            reportData?.sections?.map(section=><CheckSection data={section}></CheckSection>)
 
          } 
          </table>
