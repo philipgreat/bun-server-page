@@ -45,8 +45,10 @@ const wrapItem=({item})=>{
 }
 async function sendEmail({htmlContent,title}) {
   const emailservice="https://app.doublechaintech.com/emailservice/platformManager/sendHtmlReport/"
-  //const data={title,text:htmlContent,recipients:"philip_chang@163.com,dehong.mei@think-to.com,tingzhi.zhou@think-to.com"}
-  const data={title,text:htmlContent,recipients:"philip_chang@163.com"}
+  const data={title,
+    text:htmlContent,
+    recipients:"philip_chang@163.com,dehong.mei@think-to.com,tingzhi.zhou@think-to.com,xiaodong.chen@think-to.com,bo.huang@think-to.com,jun.yang@think-to.com"}
+  //const data={title,text:htmlContent,recipients:"philip_chang@163.com"}
   const status = await axios.put(emailservice,JSON.stringify(data));
   console.log(status.data)
 
